@@ -1,0 +1,29 @@
+@import 'vars';
+
+html,
+body {
+    height: 100%;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    line-height: 24px;
+    font-size: 16px;
+    @extend %severs-500;
+    color: $blue;
+    p {
+        line-height: 130%;
+        opacity: 0.8;
+    }
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0 15px;
+    margin: 0 auto;
+}

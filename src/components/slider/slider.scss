@@ -1,0 +1,76 @@
+.slider{
+    position: relative;
+    &__items-wrapper{
+        overflow: hidden;       
+    }
+    &__items{
+        display: flex;       
+        max-height: 650px;
+        transition: all 1s;
+    }
+    &__item{
+        // min-width: calc(100vw - 20px);
+        height: 100%;
+        width: 100%;       
+    }
+    &__item-img{
+        width: 100%;
+    }
+    &__content{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    &__content-text{
+        margin-top: 240px;
+        font-size: 40px;
+        color: #fff;
+        line-height: 120%;
+        max-width: 752px;
+        margin-bottom: 25px;
+        min-height: 200px;
+        margin-bottom: 20px;
+    }
+    &__counter-box{
+        display: flex;
+        align-items: center;
+        // position: absolute;
+        // bottom: 160px;
+        // left: 0;
+        
+    }
+    &__btn-prev,
+    &__btn-next{
+        border: none;
+        background: none;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        &::before{
+            content: '';
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &__btn-prev::before{
+        background-image: url('../../assets/arrow-prev.svg');
+    }
+    &__btn-next::before{
+        background-image: url('../../assets/arrow-next.svg');
+    }
+    &__counter{
+        color: #fff;
+        padding: 0 25px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 2px;
+        span{
+            opacity: 0.5;
+        }
+    }
+}

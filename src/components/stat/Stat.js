@@ -20,12 +20,14 @@ const Stat = () => {
         {kindOfTechnique:"ББМ ", number: "4 578", img: img7}
     ]);
 
+    const getDaysOfWar = (startday) => Math.floor((Date.parse(new Date()) - Date.parse(startday))/1000/60/60/24);
+
     return (
         <section className="stat">
             <div className="container">
                 <div className="stat__inner">
                     <div className="stat__title">
-                        131 день війни:
+                        {getDaysOfWar('2022-02-24')} день війни:
                     </div>
                     <div className="stat__list-wrapper">                  
                         <ul className="stat__list">

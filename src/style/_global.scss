@@ -10,35 +10,30 @@ body {
 }
 
 body {
-    background-color: $grayLight;
-    display: flex;
-    flex-direction: column;
     line-height: 140%;
     font-size: 16px;
     @extend %severs-500;
     color: $blue;
-    p {
-        line-height: 130%;
-        opacity: 0.8;
-    }
+    background-color: $grayLight;
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.news-all__list::-webkit-scrollbar,
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
+    padding-left: 15px;
     border-radius: 20px; 
     width: 12px;               /* ширина всей полосы прокрутки */
 }
   
-.news-all__list::-webkit-scrollbar,
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     background: $grayLight;        /* цвет зоны отслеживания */
 }
  
-.news-all__list::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: $gray;    /* цвет бегунка */
     border-radius: 20px;       /* округлось бегунка */
-    border: 3px solid $grayLight;  /* отступ вокруг бегунка */
+    border: 1px solid $grayLight;  /* отступ вокруг бегунка */
 }
 
 .container {

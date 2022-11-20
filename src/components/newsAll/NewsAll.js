@@ -89,6 +89,8 @@ export default () => {
                 onClick={(e)=>{
                     listRef.current.style.maxHeight = `${listRef.current.clientHeight}px`;
                     listRef.current.style.overflow = `auto`;
+                    listRef.current.style.paddingRight = `15px`;
+                    listRef.current.style.marginBottom = `15px`;
                     setNews(news=> [...news, ...news]);
                     e.target.disabled = true;
                 }}

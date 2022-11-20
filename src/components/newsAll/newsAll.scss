@@ -1,6 +1,7 @@
 @import "../../style/vars";
 
 .news-all{
+    margin-right: 30px;
     padding: 15px;
     background: #fff;
     border-radius: 12px;
@@ -50,6 +51,23 @@
     }
     &__filters-btn+&__filters-btn{
         margin-left: 10px;
+    }
+    &__list{
+        &::-webkit-scrollbar {
+            padding-left: 15px;
+            border-radius: 20px; 
+            width: 4px;               /* ширина всей полосы прокрутки */
+        }
+          
+        &::-webkit-scrollbar {
+            background: $grayLight;        /* цвет зоны отслеживания */
+        }
+         
+        &::-webkit-scrollbar-thumb {
+            background-color: $gray;    /* цвет бегунка */
+            border-radius: 1px;       /* округлось бегунка */
+            border: 1px solid $grayLight;  /* отступ вокруг бегунка */
+        }
     }
     &__item:last-child{
         .news-all__item-descr{

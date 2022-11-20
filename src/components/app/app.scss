@@ -1,3 +1,4 @@
+@import "../../style/reset";
 @import "../../style/global";
 @import "../../style/vars";
 
@@ -5,5 +6,8 @@
     &__inner{
         margin: 66px 0 30px;
         display: flex;
+    }
+    &__box{
+        width: 100%;
     }
 }

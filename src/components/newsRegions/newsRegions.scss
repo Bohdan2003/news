@@ -1,1 +1,37 @@
 @import "../../style/vars";
+
+.news-regions{
+    margin-bottom: 60px;
+    &__title{
+        line-height: 140%;
+        margin-bottom: 30px;
+        @extend %severs-700;
+        color:$black;
+        font-size: 32px;
+    }
+    &__list{
+        grid-column-gap: 30px;
+        grid-row-gap: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__item{
+        &-img{
+            display: block;
+            margin-bottom: 20px;
+        }
+        &-data{
+            @extend %severs-400;
+            color: #707070;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        &-descr{
+            @extend %severs-600;
+            color: $blue;
+        }
+    }
+
+}
+

@@ -1,2 +1,9 @@
 @import "../../style/global";
 @import "../../style/vars";
+
+.news{
+    &__inner{
+        margin: 66px 0 30px;
+        display: flex;
+    }
+}

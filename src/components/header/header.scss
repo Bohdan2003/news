@@ -1,6 +1,7 @@
 @import "../../style/vars";
 
 .header-top{
+    background: #fff;
     &__inner{
         display: flex;
         justify-content: space-between;
@@ -115,7 +116,6 @@
 }
 
 .header-bottom{
-    background-color: #E8E8E8;
     @extend %severs-600;
     font-size: 14px;
     text-transform: uppercase;

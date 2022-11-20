@@ -67,6 +67,7 @@
     }
     .swiper-prev,
     .swiper-next{
+        cursor: pointer;
         position: relative;
         width: 40px;
         height: 40px;
@@ -80,6 +81,7 @@
         }
     }
     .swiper-button-disabled{
+        cursor: auto;
         opacity: 0.4;
     }
     .swiper-prev::before{

@@ -5,7 +5,7 @@ import facebook from '../../assets/facebook.svg'
 
 import './header.scss';
 
-const Header = () => {
+export default () => {
     return(
         <header className="header"> 
             <div className="header-top">
@@ -117,6 +117,4 @@ const Header = () => {
             </div>
         </header>
     )
-}
-
-export default Header;
+};

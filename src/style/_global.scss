@@ -10,9 +10,10 @@ body {
 }
 
 body {
+    background-color: $grayLight;
     display: flex;
     flex-direction: column;
-    line-height: 24px;
+    line-height: 140%;
     font-size: 16px;
     @extend %severs-500;
     color: $blue;
@@ -20,6 +21,24 @@ body {
         line-height: 130%;
         opacity: 0.8;
     }
+}
+
+.news-all__list::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    border-radius: 20px; 
+    width: 12px;               /* ширина всей полосы прокрутки */
+}
+  
+.news-all__list::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    background: $grayLight;        /* цвет зоны отслеживания */
+}
+ 
+.news-all__list::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background-color: $gray;    /* цвет бегунка */
+    border-radius: 20px;       /* округлось бегунка */
+    border: 3px solid $grayLight;  /* отступ вокруг бегунка */
 }
 
 .container {

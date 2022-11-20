@@ -8,7 +8,7 @@ import 'swiper/css';
 import "./slider.scss";
 
 
-const Slider = () => {
+export default () => {
     const slides = [
         {img, descr:'Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»'},
         {img: img2, descr:'Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»'},
@@ -90,5 +90,3 @@ const Slider = () => {
         </section>
     )
 };
-
-export default Slider;

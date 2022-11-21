@@ -1,6 +1,7 @@
 @import "../../style/vars";
 
 .news-all{
+    display: inline-block;
     margin-right: 30px;
     padding: 15px;
     background: #fff;
@@ -52,76 +53,55 @@
     &__filters-btn+&__filters-btn{
         margin-left: 10px;
     }
-    &__list{
-        &::-webkit-scrollbar {
-            padding-left: 15px;
-            border-radius: 20px; 
-            width: 4px;               /* ширина всей полосы прокрутки */
-        }
-          
-        &::-webkit-scrollbar {
-            background: $grayLight;        /* цвет зоны отслеживания */
-        }
-         
-        &::-webkit-scrollbar-thumb {
-            background-color: $gray;    /* цвет бегунка */
-            border-radius: 1px;       /* округлось бегунка */
-            border: 1px solid $grayLight;  /* отступ вокруг бегунка */
-        }
-    }
-    &__item:last-child{
-        .news-all__item-descr{
-            margin-bottom: 0;
-            &::after{
-                display: none;
-            }
-        }      
-    }
-    &__item{
-        position: relative;
-        &-time{
-            @extend %severs-400;
-            margin-right: 5px;
-            color: #707070;
-        }
-        &-descr{
-            display: block;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            color:inherit;
-            &::after{
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: #EBEBEB;
-                height: 1px;
-            }
+    .news-list{
+        &__item:last-child{
+            .news-list__item-descr{
+                margin-bottom: 0;
+                &::after{
+                    display: none;
+                }
+            }      
         }
         
-    }
-    &__item.news-with-photo{
-        padding-top: 40px;
-        &::before{           
-            content:'';
-            position: absolute;
-            top: 0;
-            width: 131px;
-            height: 20px;
-            background-image: url('../../assets/news-with-photo.svg');
+        &__item.news-with-photo{
+            padding-top: 40px;
+            &::before{           
+                content:'';
+                position: absolute;
+                top: 0;
+                width: 131px;
+                height: 20px;
+                background-image: url('../../assets/news-with-photo.svg');
+            }
         }
-    }
-    &__item.breaking-news{
-        @extend %severs-600;
-        padding-top: 40px;
-        &::before{           
-            content:'';
-            position: absolute;
-            top: 0;
-            width: 154px;
-            height: 20px;
-            background-image: url('../../assets/breaking-news.svg');
+        &__item.breaking-news{
+            @extend %severs-600;
+            padding-top: 40px;
+            &::before{           
+                content:'';
+                position: absolute;
+                top: 0;
+                width: 154px;
+                height: 20px;
+                background-image: url('../../assets/breaking-news.svg');
+            }
+        }
+        &__items{
+            &::-webkit-scrollbar {
+                padding-left: 15px;
+                border-radius: 20px; 
+                width: 4px;               /* ширина всей полосы прокрутки */
+            }
+              
+            &::-webkit-scrollbar {
+                background: $grayLight;        /* цвет зоны отслеживания */
+            }
+             
+            &::-webkit-scrollbar-thumb {
+                background-color: $gray;    /* цвет бегунка */
+                border-radius: 3px;       /* округлось бегунка */
+                border: 1px solid $grayLight;  /* отступ вокруг бегунка */
+            }
         }
     }
     &__btn{

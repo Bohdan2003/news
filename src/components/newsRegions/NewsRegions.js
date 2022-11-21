@@ -1,67 +1,46 @@
-import './newsRegions.scss';
-import img from "../../assets/newsRegions/1.jpg"
 import { useState } from 'react';
+
+import NewsRegionsItem from './NewsRegionsItem';
+
+import './newsRegions.scss';
 
 export default () => {
 
-    const [newsRegions, setNewsRegions] = useState([
-        {img, data: "2022-08-05-11-00", descr: "Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі."},
-        {img, data: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."},
-        {img, data: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."},
-        {img, data: "2022-08-05-11-00", descr: "У \"Слузі\" пояснили, чому в росії знову заговорили про переговори з Україною."},
-        {img, data: "2022-08-05-11-00", descr: "ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи."},
-        {img, data: "2022-08-05-11-00", descr: "Білорусь несподівано вирішила провести військові навчання з Казахстаном: що відомо."}
+    const [newsKyiv, setNewsKyiv] = useState([
+        {type:`news`, classType:``, descr:`"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:`photo`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:``, descr:`Прем'єрка Швеції відвідала потрощені росіянами Бучу й Бородянку: реакція на побачене` , time: '2022-08-04-11-00'},
+        {type:`news`, classType:`breaking`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '2022-08-04-11-00'},
+        {type:`news`, classType:``, descr:`Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф` , time: '2022-08-03-11-00'}
+    ]);
+    
+    const [newsOdesa, setNewsOdesa] = useState([
+        {type:`news`, classType:``, descr:`"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:`photo`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:``, descr:`Прем'єрка Швеції відвідала потрощені росіянами Бучу й Бородянку: реакція на побачене` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:`breaking`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:``, descr:`Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф` , time: '2022-08-05-11-00'}
     ]);
 
-    const transformMonth = (month) => {
-        switch(month){
-            case '01':
-                return 'січень'
-            case '02':
-                return 'лютий'
-            case '03':
-                return 'березень'
-            case '04':
-                return 'квітень'
-            case '05':
-                return 'травень'
-            case '06':
-                return 'червень'
-            case '07':
-                return 'липень'
-            case '08':
-                return 'серпень'
-            case '09':
-                return 'вересень'
-            case '10':
-                return 'жовтень'
-            case '11':
-                return 'листопад'
-            case '12':
-                return 'грудень'
-            default:
-                return 'error'                   
-        }      
-    };
-
-    const transformData = (data) => 
-        `${data.slice(8,10)} ${transformMonth(data.slice(5,7)).toUpperCase()} ${data.slice(11).replace(/\-/g, ":")}`
-    ;
-
+    const [newsKharkiv, setNewsKharkiv] = useState([
+        {type:`news`, classType:``, descr:`"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:`photo`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '2022-08-05-11-00'},
+        {type:`news`, classType:``, descr:`Прем'єрка Швеції відвідала потрощені росіянами Бучу й Бородянку: реакція на побачене` , time: '2022-08-04-11-00'},
+        {type:`news`, classType:`breaking`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '2022-08-04-11-00'},
+        {type:`news`, classType:``, descr:`Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф` , time: '2022-08-04-11-00'}
+    ]);
     return (
         <section className="news-regions">
-            <h4 className="news-regions__title">
-                Вибір редакції
-            </h4>
-            <ul className="news-regions__list">
-                {newsRegions.map(({img, data, descr}) => 
-                    <li className="news-regions__item">
-                        <img className="news-regions__item-img" src={img} alt=""  />
-                        <a className="news-regions__item-data" href="#">{transformData(data)}</a>
-                        <a className="news-regions__item-descr" href="#">{descr}</a>
-                    </li>  
-                )}     
-            </ul>
+            <div className="news-regions__box">
+                <h4 className="news-regions__title">Регіони</h4>
+                <a  className="news-regions__link" href="#">Всі новини розділу</a>
+            </div>
+            <div className="news-regions__items">
+                <NewsRegionsItem name={'Київ'} news={newsKyiv}/>     
+                <NewsRegionsItem name={'Одеса'} news={newsOdesa}/>     
+                <NewsRegionsItem name={'Харків'} news={newsKharkiv}/>     
+            </div>
+
         </section>
     )
 }

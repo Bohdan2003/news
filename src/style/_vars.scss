@@ -26,3 +26,33 @@ $orange: #FF7534;
     font-family: "TTSevers-Bold";
     font-weight: 700;
 }
+
+%title{
+    @extend %severs-700; 
+    font-size: 32px;
+    color:$black;
+}
+
+%link{
+    @extend %severs-600; 
+    color: $orange;
+    font-size: 14px;
+}
+
+%btn-more-news{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 5px 50px 5px 0;
+    position: relative;
+    color: $blue;
+    &::after{
+        content: '';
+        position: absolute;
+        background-image: url('../assets/link-arrow.svg');
+        width: 32px;
+        height: 32px;
+        top: 0;
+        right: 0;       
+    }
+}

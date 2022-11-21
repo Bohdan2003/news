@@ -52,7 +52,7 @@ export default () => {
                     )
                 }
             </div>
-            <ul className="news-all__list"
+            <ul className="news-list__items"
                 ref={listRef}>
                 {
                     news.filter(item => {
@@ -62,20 +62,20 @@ export default () => {
                             return item
                         }
                     }).map(({classType, descr, time}, i) => 
-                        <li className={`news-all__item 
+                        <li className={`news-list__item 
                                         ${classType === `photo` ? 'news-with-photo' : null}
                                         ${classType === `breaking` ? 'breaking-news' : null}`
                                       } 
                             key={i}
                         >                           
                             <a 
-                                className="news-all__item-descr" 
+                                className="news-list__item-descr" 
                                 href="#"
                                 onClick={e=>{
                                     e.preventDefault();
                                 }}
                             >
-                                <span className="news-all__item-time">
+                                <span className="news-list__item-time">
                                     {time}
                                 </span>
                                 {descr}
@@ -87,7 +87,7 @@ export default () => {
             <button 
                 className="news-all__btn"
                 onClick={(e)=>{
-                    listRef.current.style.maxHeight = `${listRef.current.clientHeight}px`;
+                    listRef.current.style.maxHeight = `${listRef.current.clientHeight-15}px`;
                     listRef.current.style.overflow = `auto`;
                     listRef.current.style.paddingRight = `15px`;
                     listRef.current.style.marginBottom = `15px`;

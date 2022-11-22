@@ -1,13 +1,11 @@
-import { getTime, getDay, getMonth, transformMonth } from '../newsEditorial/NewsEditorial';
+import { getDay } from '../newsEditorial/NewsEditorial';
 
 import NewsRegionsList from './NewsRegionsList';
 
 export default ({name, news}) => {
-    let renderArr = [],
-        indexArr = [];
-    
+    let indexArr = [],
+        arrOfRange = [];
 
-    let arrOfRange = [];
     const renderContent = (news) => {
         let prevValue;
 
@@ -15,12 +13,10 @@ export default ({name, news}) => {
             if(i == 0){
                 indexArr.push(0);
                 prevValue = getDay(news[1].time).replace(/0/g,'');
-                renderArr.push(prevValue);
             }
             if(prevValue !== getDay(news[i].time).replace(/0/g,'')){
                 indexArr.push(i);
                 indexArr.push(i);
-                renderArr.push(getDay(news[i].time).replace(/0/g,''));
                 prevValue = getDay(news[i].time).replace(/0/g,'');
             }
             if(i === news.length-1){
@@ -29,7 +25,7 @@ export default ({name, news}) => {
         }
 
         let j = 0;
-        for(let i = 1; i < indexArr.length;i+=2){
+        for(let i = 1; i < indexArr.length; i+=2){
             arrOfRange[j] = [indexArr[i-1], indexArr[i]];
             j++;
         }

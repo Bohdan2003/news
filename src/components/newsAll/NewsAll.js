@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 import './newsAll.scss';
 
@@ -13,9 +13,6 @@ export default () => {
         {name: "arcticles", label: "Статті"}
     ];
 
-    useEffect(()=>{
-       
-    },[]);
     const [news, setNews] = useState([
         {type:`news`, classType:``, descr:`"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано` , time: '14:59'},
         {type:`news`, classType:`photo`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '14:59'},
@@ -43,7 +40,7 @@ export default () => {
                 {
                     filtersBtn.map(({name, label}, i) => 
                         <button 
-                            className={`news-all__filters-btn ${activeFilter == name ? 'news-all__filters-btn--active' : null}`}
+                            className={`news-all__filters-btn ${activeFilter == name ? 'news-all__filters-btn--active' : ''}`}
                             key={i}
                             onClick={()=>{
                                 setFilter(name); 
@@ -52,45 +49,43 @@ export default () => {
                     )
                 }
             </div>
-            <ul className="news-list__items"
-                ref={listRef}>
-                {
-                    news.filter(item => {
-                        if(activeFilter==='all'){
-                            return item
-                        } else if(item.type === activeFilter) {
-                            return item
-                        }
-                    }).map(({classType, descr, time}, i) => 
-                        <li className={`news-list__item 
-                                        ${classType === `photo` ? 'news-with-photo' : null}
-                                        ${classType === `breaking` ? 'breaking-news' : null}`
-                                      } 
-                            key={i}
-                        >                           
-                            <a 
-                                className="news-list__item-descr" 
-                                href="#"
-                                onClick={e=>{
-                                    e.preventDefault();
-                                }}
-                            >
-                                <span className="news-list__item-time">
-                                    {time}
-                                </span>
-                                {descr}
-                            </a>
-                        </li>
-                    )
-                }
-            </ul>
+            <div className="news-list__items-wrapper"
+                 ref={listRef}>
+                <ul className="news-list__items">
+                    {
+                        news.filter(item => {
+                            if(activeFilter==='all'){
+                                return item
+                            } else if(item.type === activeFilter) {
+                                return item
+                            }
+                        }).map(({classType, descr, time}, i) => 
+                            <li className={`news-list__item ${classType === `photo` ? 'news-with-photo' : ''} ${classType === `breaking` ? 'breaking-news' : ''}`} 
+                                key={i}
+                            >                           
+                                <a 
+                                    className="news-list__item-descr" 
+                                    href="#"
+                                    onClick={e=>{
+                                        e.preventDefault();
+                                    }}
+                                >
+                                    <span className="news-list__item-time">
+                                        {time}
+                                    </span>
+                                    {descr}
+                                </a>
+                            </li>
+                        )
+                    }
+                </ul>
+            </div>     
             <button 
                 className="news-all__btn"
                 onClick={(e)=>{
-                    listRef.current.style.maxHeight = `${listRef.current.clientHeight-15}px`;
+                    listRef.current.style.maxHeight = `${listRef.current.offsetHeight}px`;
                     listRef.current.style.overflow = `auto`;
                     listRef.current.style.paddingRight = `15px`;
-                    listRef.current.style.marginBottom = `15px`;
                     setNews(news=> [...news, ...news]);
                     e.target.disabled = true;
                 }}

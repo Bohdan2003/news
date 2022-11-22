@@ -3,7 +3,7 @@
 .news-all{
     display: inline-block;
     margin-right: 30px;
-    padding: 15px;
+    padding: 15px 15px 30px;
     background: #fff;
     border-radius: 12px;
     max-width: 305px;
@@ -57,6 +57,7 @@
         &__item:last-child{
             .news-list__item-descr{
                 margin-bottom: 0;
+                padding-bottom: 0;
                 &::after{
                     display: none;
                 }
@@ -86,7 +87,8 @@
                 background-image: url('../../assets/breaking-news.svg');
             }
         }
-        &__items{
+        &__items-wrapper{
+            margin-bottom: 53px;
             &::-webkit-scrollbar {
                 padding-left: 15px;
                 border-radius: 20px; 

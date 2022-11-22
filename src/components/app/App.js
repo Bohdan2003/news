@@ -5,6 +5,7 @@ import Slider from "../slider/Slider";
 import NewsAll from '../newsAll/NewsAll';
 import NewsEditorial from "../newsEditorial/NewsEditorial";
 import NewsRegions from "../newsRegions/NewsRegions";
+import NewsVideo from "../newsVideo/NewsVideo";
 
 import './app.scss';
 
@@ -26,6 +27,7 @@ export default () => {
                             </div>
                         </div>
                     </section>
+                    <NewsVideo/>
                 </div>
             <Footer/>
         </>

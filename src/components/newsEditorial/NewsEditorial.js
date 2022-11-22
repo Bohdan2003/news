@@ -61,8 +61,8 @@ export default () => {
                 Вибір редакції
             </h4>
             <ul className="news-edirorial__list">
-                {news.map(({img, data, descr}) => 
-                    <li className="news-edirorial__item">
+                {news.map(({img, data, descr}, i) => 
+                    <li className="news-edirorial__item" key={i}>
                         <img className="news-edirorial__item-img" src={img} alt=""  />
                         <a className="news-edirorial__item-data" href="#">{transformData(data)}</a>
                         <a className="news-edirorial__item-descr" href="#">{descr}</a>
@@ -73,5 +73,5 @@ export default () => {
     )
 }
 
-export { getTime, getDay, getMonth, transformMonth };
+export { getTime, getDay, getMonth, transformMonth, transformData };
 

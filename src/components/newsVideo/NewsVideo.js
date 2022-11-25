@@ -1,6 +1,8 @@
-import './newsVideo.scss';
-
 import { transformData } from '../newsEditorial/NewsEditorial';
+import { Fancybox } from "@fancyapps/ui";
+
+import "@fancyapps/ui/dist/fancybox.css";
+import './newsVideo.scss';
 
 import img1 from "../../assets/newsVideo/1.jpg";
 import img2 from "../../assets/newsVideo/2.jpg";
@@ -11,12 +13,20 @@ import img5 from "../../assets/newsVideo/5.jpg";
 export default () => {
 
     const slides = [
-        {img: img1, data: "2022-08-05-11-00", descr:'"Це не Джошуа": Усик розповів, кого вважає своїм головним суперником'},
-        {img: img2, data: "2022-08-05-11-00", descr:'Ватажок "ДНР" підтвердив підготовку самосуду над полоненими українськими військовими. Відео'},
-        {img: img3, data: "2022-08-05-11-00", descr:'"Спекотні літні канікули": Міноборони України попередило росіян про наслідки відвідування Криму (відео)'},
-        {img: img4, data: "2022-08-05-11-00", descr:'Під москвою палала військова частина, де проходять службу строковики (відео)'},
-        {img: img5, data: "2022-08-05-11-00", descr:'СБУ затримала в Києві "військового експерта", який працював на росію (фото)'}
+        {img: img1, data: "2022-08-05-11-00", descr:'"Це не Джошуа": Усик розповів, кого вважає своїм головним суперником', videoLink: "https://www.youtube.com/watch?v=6E6uyr9nNZs&t=6s"},
+        {img: img2, data: "2022-08-05-11-00", descr:'Ватажок "ДНР" підтвердив підготовку самосуду над полоненими українськими військовими. Відео', videoLink: "https://www.youtube.com/watch?v=6E6uyr9nNZs&t=6s"},
+        {img: img3, data: "2022-08-05-11-00", descr:'"Спекотні літні канікули": Міноборони України попередило росіян про наслідки відвідування Криму (відео)', videoLink: "https://www.youtube.com/watch?v=6E6uyr9nNZs&t=6s"},
+        {img: img4, data: "2022-08-05-11-00", descr:'Під москвою палала військова частина, де проходять службу строковики (відео)', videoLink: "https://www.youtube.com/watch?v=6E6uyr9nNZs&t=6s"},
+        {img: img5, data: "2022-08-05-11-00", descr:'СБУ затримала в Києві "військового експерта", який працював на росію (фото)', videoLink: "https://www.youtube.com/watch?v=6E6uyr9nNZs&t=6s"}
     ];
+    
+    const renderDescription = (descr, i) => {
+        if(i === 0){
+            return descr.length > 90 && i === 0  ? descr.slice(0, 90) + "..." : descr;
+        } else {
+            return descr.length > 50 && i !== 0  ? descr.slice(0, 50) + "..." : descr;
+        }
+    }
 
     return (
         <section className="newsVideo">
@@ -33,16 +43,17 @@ export default () => {
                     <div className="newsVideo__content">
                         <ul className="newsVideo__list">
                             {
-                                slides.map(({img, data, descr}, i) => (
+                                slides.map(({img, data, descr, videoLink}, i) => (
                                     <li className="newsVideo__item" key={i}>
-                                        <a className="newsVideo__item-box" href="#">
+                                        <a className="newsVideo__item-box" data-fancybox
+                                           href={videoLink}>
                                             <img className="newsVideo__item-img" src={img} alt={descr.slice(0, 10)}/>                                            
                                         </a>
                                         <a className="newsVideo__item-data" href="#">
                                             {transformData(data)}
                                         </a>
                                         <a className="newsVideo__item-descr" href="#">
-                                            {descr.length > 40 && i !== 0 ? descr.slice(0, 40) + "..." : descr}
+                                            {renderDescription(descr, i)}
                                         </a>
 
                                     </li>

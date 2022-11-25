@@ -1,0 +1,91 @@
+@import "../../style/vars";
+
+.news-columns{
+    margin-right: 30px;
+    padding: 15px 15px 30px;
+    background: #fff;
+    border-radius: 12px;
+    max-width: 305px;
+    width: 100%;   
+    &__box{
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: space-between;
+        align-items: center;
+        @extend %severs-600;
+    }
+    &__link{
+        @extend %link;
+    }
+    &__title{
+        font-size: 24px;       
+        color:$black;       
+    }
+    &__items{
+        margin-bottom: 60px;
+    }
+    &__item{
+        position: relative;
+            display: block;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            color:inherit;
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #EBEBEB;
+                height: 1px;
+            }
+    }
+    &__item:last-child{
+        margin-bottom: 0;
+        padding-bottom: 0;
+        &::after{
+            display: none;
+        }
+    }
+    &__item-box{
+        display: flex;
+        margin-bottom: 15px;
+    }  
+    &__person-name{
+        padding-top: 15px;
+        color:$black;
+    }
+    &__person-vocation{
+        @extend %severs-400;
+        color:#707070;
+        font-size: 12px;
+    }
+    &__descr{
+        margin-bottom: 10px;
+    }
+    &__data-link{
+        color: #707070;
+        font-size: 12px;
+        @extend %severs-400;
+    }
+    &__person-link,
+    &__descr-link,
+    &__data-link{
+        color: inherit;
+        display: block;
+    }
+    &__img-link{
+        display: block;
+        margin-right: 15px;
+    }
+    &__btn{
+        width: 100%;
+        padding: 9px 0 6px;
+        border: 1px solid #979EA9;
+        border-radius: 4px;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+        
+    }
+}

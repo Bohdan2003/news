@@ -6,6 +6,7 @@ import NewsAll from '../newsAll/NewsAll';
 import NewsEditorial from "../newsEditorial/NewsEditorial";
 import NewsRegions from "../newsRegions/NewsRegions";
 import NewsVideo from "../newsVideo/NewsVideo";
+import NewsColumns from "../newsColumns/NewsColumns";
 
 import './app.scss';
 
@@ -13,8 +14,8 @@ export default () => {
     return (
         <>
             <Header/>
+            <Stat/>
                 <div className="main">
-                    <Stat/>
                     <Slider/>
                     <section className="news">
                         <div className="container">
@@ -28,6 +29,17 @@ export default () => {
                         </div>
                     </section>
                     <NewsVideo/>
+                    <section className="news-bottom">
+                        <div className="container">
+                            <div className="news-bottom__inner">
+                                <NewsColumns/>
+                                <div className="news-bottom__box">
+                                    {/* <NewsEditorial/> */}
+                                    {/* <NewsRegions/> */}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             <Footer/>
         </>

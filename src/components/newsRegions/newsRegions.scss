@@ -35,7 +35,7 @@
         @extend %btn-more-news;
     }
     .news-list{
-        margin-bottom: 10px;
+        margin-bottom: 60px;
         &__item{
             &-descr{
                 margin-bottom: 15px;
@@ -44,6 +44,7 @@
         }
         &__item:last-child{
             .news-list__item-descr{
+                padding-bottom: 0;
                 margin-bottom: 0;
                 &::after{
                     display: none;

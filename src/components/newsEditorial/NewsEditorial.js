@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import NewsItem from '../newsItem/NewsItem';
 
 import img from "../../assets/newsRegions/1.jpg"
 
@@ -60,15 +61,11 @@ export default () => {
             <h4 className="news-edirorial__title">
                 Вибір редакції
             </h4>
-            <ul className="news-edirorial__list">
-                {news.map(({img, data, descr}, i) => 
-                    <li className="news-edirorial__item" key={i}>
-                        <img className="news-edirorial__item-img" src={img} alt=""  />
-                        <a className="news-edirorial__item-data" href="#">{transformData(data)}</a>
-                        <a className="news-edirorial__item-descr" href="#">{descr}</a>
-                    </li>  
+            <div className="news-edirorial__items">
+                {news.map((props, i) => 
+                    <NewsItem {...props} i={i}/>
                 )}     
-            </ul>
+            </div>
         </section>
     )
 }

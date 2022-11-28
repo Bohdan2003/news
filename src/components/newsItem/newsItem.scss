@@ -1,0 +1,27 @@
+@import "../../style/vars";
+
+.news-item{
+    &__imglink{
+        display: block;
+        width: 100%;
+        max-height: 360px;       
+        margin-bottom: 15px;
+        img{
+            height: 100%;
+            width: 100%; 
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &__data{
+        @extend %severs-400;
+        color: #707070;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    &__descrlink{
+        @extend %severs-600;
+        color: $blue;
+    }
+}

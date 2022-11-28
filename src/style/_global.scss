@@ -38,42 +38,9 @@ body::-webkit-scrollbar-thumb {
 
 .container {
     box-sizing: border-box;
-    max-width: 1280px;
+    max-width: 1340px;
     padding: 0 15px;
     margin: 0 auto;
 }
 
-.news-list{
-    &__data{
-        display: block;
-        font-size: 12px;
-        margin-bottom: 10px;
-        color: $orange;
-        @extend %severs-400;
-    }
-    &__item{
-        position: relative;
-        &-time{
-            @extend %severs-400;
-            margin-right: 5px;
-            color: #707070;
-        }
-        &-descr{
-            position: relative;
-            display: block;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            color:inherit;
-            &::after{
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: #EBEBEB;
-                height: 1px;
-            }
-        }
-        
-    }
-}
+

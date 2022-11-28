@@ -39,7 +39,8 @@ export default ({name, news}) => {
                 {name}
             </div>
             {
-                arrOfRange.map((range, i) => <NewsRegionsList key={i} data={news[range[0]].time} news={news.slice(...range)}/>                 
+                arrOfRange.map((range, i) => 
+                    <NewsRegionsList key={i} data={news[range[0]].time} news={news.slice(...range)}/>                 
                 )
             }
             <button className="news-regions__btn">Більше новин</button>

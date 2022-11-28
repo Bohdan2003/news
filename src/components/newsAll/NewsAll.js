@@ -1,5 +1,8 @@
 import { useState, useRef } from 'react';
 
+import NewsList from '../newsList/NewsList';
+
+
 import './newsAll.scss';
 
 export default () => {
@@ -49,37 +52,9 @@ export default () => {
                     )
                 }
             </div>
-            <div className="news-list__items-wrapper"
-                 ref={listRef}>
-                <ul className="news-list__items">
-                    {
-                        news.filter(item => {
-                            if(activeFilter==='all'){
-                                return item
-                            } else if(item.type === activeFilter) {
-                                return item
-                            }
-                        }).map(({classType, descr, time}, i) => 
-                            <li className={`news-list__item ${classType === `photo` ? 'news-with-photo' : ''} ${classType === `breaking` ? 'breaking-news' : ''}`} 
-                                key={i}
-                            >                           
-                                <a 
-                                    className="news-list__item-descr" 
-                                    href="#"
-                                    onClick={e=>{
-                                        e.preventDefault();
-                                    }}
-                                >
-                                    <span className="news-list__item-time">
-                                        {time}
-                                    </span>
-                                    {descr}
-                                </a>
-                            </li>
-                        )
-                    }
-                </ul>
-            </div>     
+            <div className="news-list" ref={listRef}>                
+                <NewsList news={news} activeFilter={activeFilter}/>  
+            </div>
             <button 
                 className="news-all__btn"
                 onClick={(e)=>{

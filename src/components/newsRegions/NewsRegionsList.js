@@ -1,5 +1,6 @@
 import { getTime, getDay, getMonth, transformMonth } from '../newsEditorial/NewsEditorial';
 
+
 export default ({data, news}) => {
     return (
         <div className="news-list">

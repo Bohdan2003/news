@@ -8,10 +8,13 @@ import NewsRegions from "../newsRegions/NewsRegions";
 import NewsVideo from "../newsVideo/NewsVideo";
 import NewsColumns from "../newsColumns/NewsColumns";
 import NewsSection from "../newsSection/NewsSection";
+import Promotion from "../promotion/Promotion";
 
 import './app.scss';
 
 import img from "../../assets/newsRegions/1.jpg"
+import img1 from "../../assets/promotion/1.jpg"
+import img2 from "../../assets/newsSection/1.jpg"
 
 export default () => {
 
@@ -24,26 +27,46 @@ export default () => {
     ];
 
     const secondNewsList = [
-        {type:`news`, classType:`breaking`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '14:59'},
-        {type:`news`, classType:`photo`, descr:`Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф` , time: '14:59'},
+        {type:`news`, classType:``, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '14:59'},
+        {type:`news`, classType:`online`, descr:`Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф` , time: '14:59'},
+        {type:`news`, classType:``, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '14:59'},
+        {type:`news`, classType:``, descr:`"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано` , time: '14:59'},
+        {type:`news`, classType:``, descr:`"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців` , time: '14:59'}
+    ];
+    const thirdNewsList = [
+        {type:`news`, classType:``, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '14:59'},
+        {type:`news`, classType:`exclusive`, descr:`Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф` , time: '14:59'},
         {type:`news`, classType:`video`, descr:`До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини` , time: '14:59'},
-        {type:`news`, classType:`online`, descr:`"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано` , time: '14:59'},
-        {type:`news`, classType:`exclusive`, descr:`"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців` , time: '14:59'}
+        {type:`news`, classType:``, descr:`"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано` , time: '14:59'},
+        {type:`news`, classType:``, descr:`"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців` , time: '14:59'}
     ];
 
     const firstNews = [
-        {img, data: "2022-08-05-11-00", descr: "Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі."},
-        {img, data: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."},
-        {img, data: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."}
+        {img, date: "2022-08-05-11-00", descr: "Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі."},
+        {img, date: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."},
+        {img, date: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."}
     ]; 
+    const thirdNews = [
+        {img: img2, date: "2022-08-05-11-00", descr: "Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі."},
+        {img, date: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."},
+        {img, date: "2022-08-05-11-00", descr: "Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України."}
+    ]; 
+
+    const dataPromotion = {img: img1, date: "2022-08-05-11-00", descr: "Акція! Телевізори Samsung з вигодою та в оплату частинами до 12 платежів", items:[
+        {date: "2022-08-05-11-00", descr:"Замовте нові флагмани Samsung Galaxy Fold4|Flip4 і отримуйте подарунки"},
+        {date: "2022-08-05-11-00", descr:"Зустрічай нову серію смартфонів та навушників від Samsung"},
+        {date: "2022-08-05-11-00", descr:"Зустрічай нову серію смартфонів та навушників від Samsung"},
+        {date: "2022-08-05-11-00", descr:"Зустрічай нову серію смартфонів та навушників від Samsung"},
+        {date: "2022-08-05-11-00", descr:"Мобільний телефон Xiaomi Redmi 9C 3/64GB"}
+    ]}
 
     return (
         <>
             <Header/>
-            <Stat/>
+            {/* <Stat/> */}
                 <div className="main">
-                    <Slider/>
-                    <section className="news">
+                    {/* <Slider/> */}
+                    {/* <section className="news">
                         <div className="container">
                             <div className="news__inner">
                                 <NewsAll/>
@@ -53,22 +76,23 @@ export default () => {
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <NewsVideo/>
-                    <section className="news-bottom">
+                    </section> */}
+                    {/* <NewsVideo/> */}
+                    {/* <section className="news-bottom">
                         <div className="container">
                             <div className="news-bottom__inner">
                                 <NewsColumns/>
                                 <div className="news-bottom__box">
                                     <NewsSection newsList={firstNewsList} news={firstNews}/>
-                                    <NewsSection newsList={firstNewsList} news={firstNews}/>
-                                    <NewsSection newsList={firstNewsList} news={firstNews}/>
+                                    <Promotion {...dataPromotion}/>
+                                    <NewsSection newsList={secondNewsList} news={firstNews}/>
+                                    <NewsSection newsList={thirdNewsList} news={thirdNews}/>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                 </div>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 };

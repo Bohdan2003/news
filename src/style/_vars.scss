@@ -39,6 +39,12 @@ $orange: #FF7534;
     font-size: 14px;
 }
 
+%date{
+    font-size: 12px;
+    @extend %severs-400;
+    color: #707070;
+}
+
 %btn-more-news{
     cursor: pointer;
     background-color: transparent;

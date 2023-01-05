@@ -8,8 +8,8 @@ body,
   box-sizing: border-box;
 }
   
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
 }
   
@@ -30,11 +30,10 @@ figcaption,
 blockquote,
 dl,
 dd {
-  line-height: 140%;
   margin: 0;
 }
   
-ul[class] {
+ul {
   list-style: none;
 }
   
@@ -47,9 +46,11 @@ input,
 button,
 textarea,
 select {
+  padding: 0;
   font: inherit;
 }
 
 a{
+  display: block;
   text-decoration: none;
 }

@@ -35,7 +35,7 @@
         @extend %btn-more-news;
     }
     .news-list{
-        margin-bottom: 60px;
+        margin-bottom: 25px;
         &__item{
             &-descr{
                 margin-bottom: 15px;
@@ -52,6 +52,12 @@
             }      
         }
     }
+    &__item-box{
+        .news-list:last-child{
+            margin-bottom: 60px;
+        }
+    }
+    
 }
 
 

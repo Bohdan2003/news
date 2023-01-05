@@ -1,0 +1,70 @@
+@import "../../style/vars";
+
+.select{
+    display: none;
+    width: 55px;
+    position: relative;
+    &__btn{
+        position: absolute;
+        top: 40px;
+        z-index: 1;
+    }
+    &__title{ 
+        transform: translateY(5%);
+        padding: 5px 10px;
+        position: relative;
+        &::after{
+            content: '';   
+            transition: all .5s;        
+            position: absolute;
+            width: 9px;
+            height: 6px;
+            background-image: url("../../assets/arrow-select.svg");
+            right: 10px;
+            top: 11px;
+        }
+        &--active::after{
+            transform: rotateX(180deg);
+        }
+    }
+    &__list-wrapper{
+        width: inherit;
+        text-align: center;
+        transition: all .5s;
+        position: absolute;
+        z-index: 2;
+        overflow: hidden;
+        pointer-events: none;
+        &--disable{
+            pointer-events: auto;
+        }
+    }
+    &__list{
+        border: 1px solid $grayLight;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: all .5s;
+        border-radius: 1px solid #000;
+        &--hidden{
+            transform: translateY(-200%);
+        }
+    }
+    &__item{
+        &:last-child{
+            margin-bottom: 0;
+        }
+        margin-bottom: 10px;
+        list-style: none;
+    }
+    &__item.active{
+        color: $gray;
+        pointer-events: none;
+    }
+}
+
+@media(max-width:800px){
+    .select{
+        display: block;
+    }
+}

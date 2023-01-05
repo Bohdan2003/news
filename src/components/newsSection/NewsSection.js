@@ -18,8 +18,8 @@ export default ({news, newsList}) => {
                 <div className="news-section__content-box">
                     <div className="news-section__items">
                         {
-                            news.map(({img, data, descr}, i) => 
-                                <NewsItem img={img} data={data} descr={descr} i={i}/>
+                            news.map(({img, date, descr}, i) => 
+                                <NewsItem img={img} data={date} descr={descr} i={i}/>
                             )}
                     </div>
                 </div>
